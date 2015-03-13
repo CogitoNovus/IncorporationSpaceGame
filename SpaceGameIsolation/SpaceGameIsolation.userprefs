@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\itemCount.cs">
+    <Files>
+      <File FileName="Assets\Scripts\AsteroidPiece.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CreateField.cs" Line="45" Column="148" />
+      <File FileName="Assets\Scripts\Asteroid.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\guiControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Avatar.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OxygenMeter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\itemCount.cs" Line="12" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
