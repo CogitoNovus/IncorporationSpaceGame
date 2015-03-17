@@ -5,7 +5,7 @@ public class Asteroid : MonoBehaviour {
 
 	public bool canHarvest = false;
 
-	static public bool visible = false;
+	public bool visible = false;
 
 	public float mineralAmount = 100;
 
@@ -23,12 +23,12 @@ public class Asteroid : MonoBehaviour {
 
 		if (visible == true){
 
-			gameObject.GetComponent<MeshRenderer>().enabled = true;
+			this.gameObject.GetComponent<MeshRenderer>().enabled = true;
 		}
 
 		if (visible == false){
 
-			gameObject.GetComponent<MeshRenderer>().enabled = false;
+			this.gameObject.GetComponent<MeshRenderer>().enabled = false;
 		}
 
 		if (Avatar.drill == true && canHarvest == true){
@@ -45,7 +45,7 @@ public class Asteroid : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter (Collision other) {
+	/*void OnTriggerEnter (Collider other) {
 
 		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player"){
 
@@ -54,12 +54,34 @@ public class Asteroid : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionExit (Collision other) {
+	void OnTriggerExit (Collider other) {
 		
 		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player"){
 			
 			Debug.Log(canHarvest);
 			canHarvest = false;
 		}
+	}*/
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Player"){
+			
+			Debug.Log("HE'S IN!!");
+			visible = true;
+		}
+
 	}
+	
+	void OnTriggerExit(Collider other)
+	{
+		if(other.gameObject.tag == "Player"){
+			
+			Debug.Log("HE'S NOT IN!!!?!");
+			visible = false;
+		}
+
 }
+}
+
+

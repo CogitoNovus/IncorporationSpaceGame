@@ -23,7 +23,7 @@ public class CreateField : MonoBehaviour
 										if (r == 4) {
 												//GameObject asteroidSpawn;
 			
-												asteroidSpawn[i] = Instantiate (asteroid, new Vector3 (x, y, z), new Quaternion (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360))) as GameObject;
+						asteroidSpawn[i] = Instantiate (asteroid, new Vector3 (transform.position.x + x, transform.position.y + y, transform.position.z + z), new Quaternion (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360))) as GameObject;
 			
 												int t = Random.Range (0, 10);
 
@@ -63,6 +63,7 @@ public class CreateField : MonoBehaviour
 
 		}
 
+	/*
 	    void OnTriggerEnter(Collider other)
 		{
 			if(other.transform.tag == "Player"){
@@ -78,6 +79,5 @@ public class CreateField : MonoBehaviour
 
 				Debug.Log("HE'S NOT IN!!!?!");
 				Asteroid.visible = false;
-		}
-}
+		}*/
 }
