@@ -10,9 +10,11 @@ public class CreateField : MonoBehaviour
 		
 		private int i;
 
+		
 		// Use this for initialization
 		void Start ()
 		{
+
 
 				for (int x = 0; x < 200; x += 30) {
 			i++;
@@ -42,7 +44,7 @@ public class CreateField : MonoBehaviour
 												
 												if (t == 7) {
 
-												asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360)*50));
+												asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360))*50);
 														//asteroidSpawn = Instantiate (asteroid, new Vector3 (x+0.5f, y, z), new Quaternion (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360))) as GameObject;
 												}
 												asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360)));

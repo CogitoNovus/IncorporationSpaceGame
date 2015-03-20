@@ -5,7 +5,7 @@ public class Asteroid : MonoBehaviour {
 
 	public bool canHarvest = false;
 
-	public bool visible = false;
+	public static bool visible = true;
 
 	public float mineralAmount = 100;
 
@@ -63,7 +63,7 @@ public class Asteroid : MonoBehaviour {
 		}
 	}*/
 
-	void OnTriggerEnter(Collider other)
+	/*void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.tag == "Player"){
 			
@@ -81,7 +81,7 @@ public class Asteroid : MonoBehaviour {
 			visible = false;
 		}
 
-}
+}*/
 }
 
 

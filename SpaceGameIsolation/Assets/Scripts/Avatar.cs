@@ -9,6 +9,8 @@ public class Avatar : MonoBehaviour {
 
 	public Rigidbody rb;
 
+	public int speed = 1;
+
 	public int stabSpeed = 1;
 
 	void Start () {
@@ -25,16 +27,16 @@ public class Avatar : MonoBehaviour {
 		if(Input.GetKey(KeyCode.A)){
 
 		OxygenMeter.oxyLvl -= 0.001f;
-		rb.AddTorque(gameObject.transform.up * -1 * Time.deltaTime); 
-		rb.AddForce(gameObject.transform.forward * 1); 
+		rb.AddTorque(gameObject.transform.up * -speed * Time.deltaTime); 
+			rb.AddForce(gameObject.transform.forward * speed); 
 
 		}
 
 		if(Input.GetKey(KeyCode.D)){
 			
 		OxygenMeter.oxyLvl -= 0.001f;
-		rb.AddTorque(gameObject.transform.up * 1 * Time.deltaTime); 
-		rb.AddForce(gameObject.transform.forward * 1);
+			rb.AddTorque(gameObject.transform.up * speed * Time.deltaTime); 
+			rb.AddForce(gameObject.transform.forward * speed);
 		
 		}
 
@@ -44,7 +46,7 @@ public class Avatar : MonoBehaviour {
 
 
 				OxygenMeter.oxyLvl -= 0.001f;
-				rb.AddForce(gameObject.transform.forward * 3); 
+				rb.AddForce(gameObject.transform.forward * speed); 
 
 
 		}
@@ -52,14 +54,14 @@ public class Avatar : MonoBehaviour {
 		if(Input.GetKey(KeyCode.W)){
 
 				OxygenMeter.oxyLvl -= 0.001f;
-				rb.AddForce(gameObject.transform.up * 2); 
+				rb.AddForce(gameObject.transform.up * speed * 2); 
 			
 		}
 
 		if(Input.GetKey(KeyCode.S)){
 		
 				OxygenMeter.oxyLvl -= 0.001f;
-				rb.AddForce(gameObject.transform.up * -2);
+				rb.AddForce(gameObject.transform.up * -speed);
 			
 			}}
 		if (ClassicControls == true){
@@ -67,28 +69,28 @@ public class Avatar : MonoBehaviour {
 			if(Input.GetKey(KeyCode.W)){
 				
 				OxygenMeter.oxyLvl -= 0.001f;
-				rb.AddForce(gameObject.transform.forward * 2); 
+				rb.AddForce(gameObject.transform.forward * speed * 2); 
 				
 			}
 
 			if(Input.GetKey(KeyCode.S)){
 				
 				OxygenMeter.oxyLvl -= 0.001f;
-				rb.AddForce(gameObject.transform.forward * -2); 
+				rb.AddForce(gameObject.transform.forward * -speed); 
 				
 			}
 
 			if(Input.GetKey(KeyCode.Q)){
 				
 				OxygenMeter.oxyLvl -= 0.001f;
-				rb.AddForce(gameObject.transform.up * -2); 
+				rb.AddForce(gameObject.transform.up * -speed * 2); 
 				
 			}
 
 			if(Input.GetKey(KeyCode.E)){
 				
 				OxygenMeter.oxyLvl -= 0.001f;
-				rb.AddForce(gameObject.transform.up * 2); 
+				rb.AddForce(gameObject.transform.up * speed * 2); 
 				
 			}
 
@@ -116,7 +118,7 @@ public class Avatar : MonoBehaviour {
 
 	}
 
-	/*void OnTriggerStay(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.tag == "Asteroid"){
 			
@@ -134,6 +136,6 @@ public class Avatar : MonoBehaviour {
 			Asteroid.visible = false;
 		}
 		
-	}*/
+	}
 }
 
