@@ -44,16 +44,19 @@ public class CreateField : MonoBehaviour
 												
 												if (t == 7) {
 
-												asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360))*50);
+												asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360))*50 * Time.deltaTime);
 														//asteroidSpawn = Instantiate (asteroid, new Vector3 (x+0.5f, y, z), new Quaternion (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360))) as GameObject;
 												}
-												asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360)));
+						asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360)) * Time.deltaTime);
 
-												int scale = Random.Range (1, 18);
+												int scale = Random.Range (1, 25);
 												asteroidSpawn[i].transform.localScale = new Vector3 (scale, scale, scale);
 
-												asteroidSpawn[i].GetComponent<Rigidbody>().AddTorque (new Vector3 (Random.Range (0, 10), Random.Range (0, 10), Random.Range (0, 10)));
-										}
+						asteroidSpawn[i].GetComponent<Rigidbody>().AddTorque (new Vector3 (Random.Range (0, 10), Random.Range (0, 10), Random.Range (0, 10)) * Time.deltaTime);
+
+						if (scale > 20){asteroidSpawn[i].GetComponent<Rigidbody>().mass = 30;}
+					
+									}
 								}
 						}
 				}

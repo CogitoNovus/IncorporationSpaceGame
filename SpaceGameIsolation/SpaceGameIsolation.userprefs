@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Avatar.cs">
     <Files>
-      <File FileName="Assets\Scripts\CreateField.cs" Line="55" Column="30" />
+      <File FileName="Assets\Scripts\CreateField.cs" Line="22" Column="30" />
       <File FileName="Assets\Scripts\Asteroid.cs" Line="16" Column="4" />
-      <File FileName="Assets\Scripts\Avatar.cs" Line="93" Column="50" />
+      <File FileName="Assets\Scripts\Avatar.cs" Line="118" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

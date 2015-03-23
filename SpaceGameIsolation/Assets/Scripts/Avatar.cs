@@ -13,6 +13,8 @@ public class Avatar : MonoBehaviour {
 
 	public int stabSpeed = 1;
 
+	public GameObject breadLight;
+
 	void Start () {
 
 		rb = GetComponent<Rigidbody>();
@@ -99,6 +101,11 @@ public class Avatar : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.LeftShift)){
 
 			Stabilize();
+		}
+
+		if (Input.GetKeyDown(KeyCode.LeftControl)){
+
+			Instantiate (breadLight, new Vector3 (transform.position.x, transform.position.y, transform.position.z), transform.rotation);
 		}
 
 		if(Input.GetKey(KeyCode.Space)){
