@@ -15,8 +15,12 @@ public class OxygenMeter : MonoBehaviour {
 	void FixedUpdate () {
 
 		if (oxyLvl > 0){
-		oxyLvl -= 0.001f;
+		oxyLvl -= 0.01f;
 		}
+
+	}
+
+
 		//Debug.Log(oxyLvl);
 
 		/*if (oxyLvl == 0){
@@ -29,4 +33,4 @@ public class OxygenMeter : MonoBehaviour {
 			Debug.Log("ALIVE!");*/
 
 
-	}}
+	}

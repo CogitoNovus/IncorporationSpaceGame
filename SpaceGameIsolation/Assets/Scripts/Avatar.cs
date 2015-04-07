@@ -15,6 +15,8 @@ public class Avatar : MonoBehaviour {
 
 	public GameObject breadLight;
 
+	public GameObject flashLight;
+
 	void Start () {
 
 		rb = GetComponent<Rigidbody>();
@@ -108,10 +110,25 @@ public class Avatar : MonoBehaviour {
 			Instantiate (breadLight, new Vector3 (transform.position.x, transform.position.y, transform.position.z), transform.rotation);
 		}
 
+		if (Input.GetKeyDown (KeyCode.F)){
+
+			if (flashLight.activeInHierarchy == false){
+
+			flashLight.SetActive(true);
+
+			}
+
+			else if (flashLight.activeInHierarchy == true){
+				
+				flashLight.SetActive(false);
+				
+			}
+		}
+
 		if(Input.GetKey(KeyCode.Space)){
 			
 			drill = true;
-			
+
 		}
 		else {
 			drill = false;
@@ -132,6 +149,7 @@ public class Avatar : MonoBehaviour {
 			Debug.Log("HE'S IN!!");
 			Asteroid.visible = true;
 		}
+	
 		
 	}
 	
@@ -143,6 +161,14 @@ public class Avatar : MonoBehaviour {
 			Asteroid.visible = false;
 		}
 		
+	}
+
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.tag == "Oxy" && OxygenMeter.oxyLvl < 100){
+			
+			OxygenMeter.oxyLvl += 10;
+		}
 	}
 }
 
