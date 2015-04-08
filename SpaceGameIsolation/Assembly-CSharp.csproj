@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Avatar.cs" />
      <Compile Include="Assets\Scripts\CreateField.cs" />
      <Compile Include="Assets\Scripts\OxygenMeter.cs" />
+     <Compile Include="Assets\Scripts\Surface.cs" />
      <Compile Include="Assets\Scripts\guiControl.cs" />
      <Compile Include="Assets\Scripts\itemCount.cs" />
      <Compile Include="Assets\flickering.cs" />
