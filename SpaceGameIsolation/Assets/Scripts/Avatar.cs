@@ -11,6 +11,8 @@ public class Avatar : MonoBehaviour {
 
 	public Rigidbody rb;
 
+	public static float personalMineral;
+
 	public int speed = 2;
 
 	public int stabSpeed = 1;
@@ -32,6 +34,8 @@ public class Avatar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		Debug.Log(personalMineral);
+		//Debug.Log (drill);
 			
 		if (ClassicControls == false && NewControls == false){
 
@@ -204,18 +208,16 @@ public class Avatar : MonoBehaviour {
 			}
 		}
 
-		Debug.Log(rb.velocity);
-
-		/*if(Input.GetKey(KeyCode.Space)){
+		if(Input.GetMouseButton(0)){
 			
 			drill = true;
 
 		}
 		else {
 			drill = false;
-		}*/	
+		}
 	}
-
+	
 	void Stabilize(){
 
 		float step = 1f * Time.deltaTime;
@@ -242,13 +244,13 @@ public class Avatar : MonoBehaviour {
 
 			//Vector3 v = new Vector3(other.transform.position.x - gameObject.transform.position.x, other.transform.position.y - gameObject.transform.position.y, other.transform.position.z - gameObject.transform.position.z);
 
-			Vector3 relativePos = other.transform.position - gameObject.transform.position;
+		/*	Vector3 relativePos = other.transform.position - gameObject.transform.position;
 
 			guideLine.transform.rotation = Quaternion.LookRotation(relativePos);
 
 			rb.AddForce(relativePos);
 
-			Stabilize();
+			Stabilize();*/
 
 			//v.Normalize();
 			

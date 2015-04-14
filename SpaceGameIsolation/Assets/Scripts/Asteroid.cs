@@ -21,7 +21,7 @@ public class Asteroid : MonoBehaviour {
 
 		}
 
-		if (visible == true){
+	/*	if (visible == true){
 
 			this.gameObject.GetComponent<MeshRenderer>().enabled = true;
 		}
@@ -29,13 +29,14 @@ public class Asteroid : MonoBehaviour {
 		if (visible == false){
 
 			this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-		}
+		}*/
 
 		if (Avatar.drill == true && canHarvest == true){
 
-			mineralAmount -= 0.1f;
-			
-			Debug.Log(mineralAmount);
+			mineralAmount -= 1 * Time.deltaTime;
+
+			Avatar.personalMineral += 1 * Time.deltaTime;
+
 		}
 		
 		if (mineralAmount <= 0){
@@ -45,16 +46,18 @@ public class Asteroid : MonoBehaviour {
 	
 	}
 
-	/*void OnTriggerEnter (Collider other) {
+	void OnTriggerStay (Collider other) {
 
-		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player"){
+		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player" && mineralAmount < 10){
 
-			Debug.Log(canHarvest);
+			//Debug.Log(canHarvest);
 			canHarvest = true;
 		}
+
+		else {canHarvest = false;}
 	}
 
-	void OnTriggerExit (Collider other) {
+	/*void OnTriggerExit (Collider other) {
 		
 		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player"){
 			
