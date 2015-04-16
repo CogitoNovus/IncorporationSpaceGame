@@ -52,7 +52,10 @@
      <Compile Include="Assets\Scripts\AsteroidPiece.cs" />
      <Compile Include="Assets\Scripts\Avatar.cs" />
      <Compile Include="Assets\Scripts\CreateField.cs" />
-     <Compile Include="Assets\Scripts\OxygenMeter.cs" />
+     <Compile Include="Assets\Scripts\GuiControlEnergy.cs" />
+     <Compile Include="Assets\Scripts\GuiControlOxygen.cs" />
+     <Compile Include="Assets\Scripts\MineralCount.cs" />
+     <Compile Include="Assets\Scripts\PlayerResource.cs" />
      <Compile Include="Assets\Scripts\Surface.cs" />
      <Compile Include="Assets\Scripts\deposit.cs" />
      <Compile Include="Assets\Scripts\guiControl.cs" />

@@ -1,36 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OxygenMeter : MonoBehaviour {
+public class PlayerResource : MonoBehaviour {
 
 	static public float oxyLvl;
+	static public float energyLvl;
 
 	// Use this for initialization
 	void Start () {
-	
+		
 		oxyLvl = 100;
+		energyLvl = 100;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
-		if (oxyLvl > 0){
-		oxyLvl -= 0.01f;
+		
+		if (oxyLvl >= 0){
+			oxyLvl -= 0.01f;
 		}
-
+		
 	}
-
-
-		//Debug.Log(oxyLvl);
-
-		/*if (oxyLvl == 0){
-
-			Debug.Log("DEATH!");
-		}
-
-		if (oxyLvl > 0){
-
-			Debug.Log("ALIVE!");*/
-
-
-	}
+}

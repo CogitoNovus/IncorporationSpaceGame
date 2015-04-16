@@ -31,11 +31,11 @@ public class Asteroid : MonoBehaviour {
 			this.gameObject.GetComponent<MeshRenderer>().enabled = false;
 		}*/
 
-		if (Avatar.drill == true && canHarvest == true){
+		if (Avatar.drill == true && canHarvest == true && PlayerResource.energyLvl > 1){
 
-			mineralAmount -= 1 * Time.deltaTime;
+			mineralAmount -= 2 * Time.deltaTime;
 
-			Avatar.personalMineral += 1 * Time.deltaTime;
+			Avatar.personalMineral += 2 * Time.deltaTime;
 
 		}
 		
@@ -48,9 +48,9 @@ public class Asteroid : MonoBehaviour {
 
 	void OnTriggerStay (Collider other) {
 
-		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player" && mineralAmount < 10){
+		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player" && mineralAmount != 0){
 
-			//Debug.Log(canHarvest);
+			Debug.Log(canHarvest);
 			canHarvest = true;
 		}
 

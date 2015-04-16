@@ -9,11 +9,14 @@ public class deposit : MonoBehaviour {
 
 	void Update(){
 
+		if (Avatar.personalMineral > 0){
+
 		if (canDeposit == true && Input.GetMouseButton(0)){
 
-			Avatar.personalMineral -= 10;
+			Avatar.personalMineral -= 1;
 
-			depositedMineral += 10;
+			depositedMineral += 1;
+		}
 		}
 
 	}
