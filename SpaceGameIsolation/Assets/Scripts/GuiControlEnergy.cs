@@ -9,7 +9,7 @@ public class GuiControlEnergy : MonoBehaviour {
 	
 		float energyGui = PlayerResource.energyLvl;
 
-		GetComponent<GUITexture>().pixelInset = new Rect(160,-120,energyGui,20);
+		GetComponent<GUITexture>().pixelInset = new Rect(160,-120,energyGui/2,20);
 
 	}
 }

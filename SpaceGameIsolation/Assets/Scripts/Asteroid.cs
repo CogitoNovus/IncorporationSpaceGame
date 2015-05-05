@@ -7,39 +7,42 @@ public class Asteroid : MonoBehaviour {
 
 	public static bool visible = true;
 
-	public float mineralAmount = 100;
+	public int mineralAmount = 1000;
+	
+	public SphereCollider mineralCollider;
+
+	void Start () {
+
+		mineralCollider = gameObject.GetComponent<SphereCollider>();
+	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		if (gameObject.tag == "Mineral"){
 
 			//canHarvest = true;
 
+			mineralCollider.enabled = true;
+
+			if (Avatar.scan == true){
 			gameObject.GetComponent<Renderer>().material.color = Color.blue;
-
-
+			}
+			if (Avatar.scan == false){
+				gameObject.GetComponent<Renderer>().material.color = Color.gray;
+			
+			}
 		}
 
-	/*	if (visible == true){
+		if (Avatar.drill == true && canHarvest == true && PlayerResource.energyLvl != 1){
 
-			this.gameObject.GetComponent<MeshRenderer>().enabled = true;
-		}
+			mineralAmount -= 1;
 
-		if (visible == false){
-
-			this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-		}*/
-
-		if (Avatar.drill == true && canHarvest == true && PlayerResource.energyLvl > 1){
-
-			mineralAmount -= 2 * Time.deltaTime;
-
-			Avatar.personalMineral += 2 * Time.deltaTime;
+			Avatar.personalMineral += 1;
 
 		}
 		
-		if (mineralAmount <= 0){
+		if (mineralAmount == 0 || PlayerResource.energyLvl == 1){
 			
 			canHarvest = false;
 		}
@@ -48,43 +51,22 @@ public class Asteroid : MonoBehaviour {
 
 	void OnTriggerStay (Collider other) {
 
-		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player" && mineralAmount != 0){
+		if (other.gameObject.tag == "Player" && mineralAmount != 0){
 
-			Debug.Log(canHarvest);
+			//Debug.Log(canHarvest);
 			canHarvest = true;
 		}
 
-		else {canHarvest = false;}
+		//else {canHarvest = false;}
 	}
+	void OnTriggerExit (Collider other) {
 
-	/*void OnTriggerExit (Collider other) {
-		
-		if (this.gameObject.tag == "Mineral" && other.gameObject.tag == "Player"){
-			
-			Debug.Log(canHarvest);
+		if (other.gameObject.tag == "Player"){
+
 			canHarvest = false;
-		}
-	}*/
-
-	/*void OnTriggerEnter(Collider other)
-	{
-		if(other.gameObject.tag == "Player"){
-			
-			Debug.Log("HE'S IN!!");
-			visible = true;
-		}
-
 	}
-	
-	void OnTriggerExit(Collider other)
-	{
-		if(other.gameObject.tag == "Player"){
-			
-			Debug.Log("HE'S NOT IN!!!?!");
-			visible = false;
-		}
+	}
 
-}*/
 }
 
 

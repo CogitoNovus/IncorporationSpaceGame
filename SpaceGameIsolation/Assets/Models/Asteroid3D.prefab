@@ -13,8 +13,8 @@ GameObject:
   - 95: {fileID: 9500000}
   - 54: {fileID: 5400000}
   - 64: {fileID: 6400000}
-  - 114: {fileID: 11400000}
   - 135: {fileID: 13566976}
+  - 114: {fileID: 11494644}
   m_Layer: 0
   m_Name: Asteroid3D
   m_TagString: Asteroid
@@ -109,7 +109,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11400000
+--- !u!114 &11494644
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,7 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canHarvest: 0
-  mineralAmount: 100
+  mineralAmount: 1000
+  mineralCollider: {fileID: 0}
 --- !u!135 &13566976
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -132,7 +133,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

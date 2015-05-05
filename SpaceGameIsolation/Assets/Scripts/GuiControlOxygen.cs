@@ -9,7 +9,7 @@ public class GuiControlOxygen : MonoBehaviour {
 	
 		float oxyGui = PlayerResource.oxyLvl; 
 
-		GetComponent<GUITexture>().pixelInset = new Rect(160,-145,oxyGui,20);
+		GetComponent<GUITexture>().pixelInset = new Rect(160,-145,oxyGui/200,20);
 		GetComponent<GUITexture>().color = Color.blue;
 	}
 }

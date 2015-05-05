@@ -9,8 +9,6 @@ Project("{07C77793-6F7F-933C-3056-50D5AFEFC003}") = "SpaceGameIsolation", "Assem
 EndProject
 Project("{07C77793-6F7F-933C-3056-50D5AFEFC003}") = "SpaceGameIsolation", "Assembly-UnityScript-firstpass.unityproj", "{E44824DC-3D88-23CF-5683-19D76D915A25}"
 EndProject
-Project("{07C77793-6F7F-933C-3056-50D5AFEFC003}") = "SpaceGameIsolation", "Assembly-UnityScript.unityproj", "{1F6F3A02-4A98-5E25-8173-A9A7510CC911}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,15 +31,11 @@ Global
 		{E44824DC-3D88-23CF-5683-19D76D915A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E44824DC-3D88-23CF-5683-19D76D915A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E44824DC-3D88-23CF-5683-19D76D915A25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F6F3A02-4A98-5E25-8173-A9A7510CC911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F6F3A02-4A98-5E25-8173-A9A7510CC911}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F6F3A02-4A98-5E25-8173-A9A7510CC911}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F6F3A02-4A98-5E25-8173-A9A7510CC911}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																											GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

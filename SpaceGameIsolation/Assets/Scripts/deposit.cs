@@ -3,15 +3,17 @@ using System.Collections;
 
 public class deposit : MonoBehaviour {
 
-	public float depositedMineral;
+	public static int depositedMineral;
 
 	public bool canDeposit;
 
 	void Update(){
 
+		Debug.Log(canDeposit);
+
 		if (Avatar.personalMineral > 0){
 
-		if (canDeposit == true && Input.GetMouseButton(0)){
+		if (canDeposit == true && Input.GetMouseButton(0) && Avatar.personalMineral != 0){
 
 			Avatar.personalMineral -= 1;
 
@@ -23,12 +25,20 @@ public class deposit : MonoBehaviour {
 
 	void OnTriggerStay (Collider other){
 
-		if(other.gameObject.tag == "Player" && Avatar.personalMineral > 0){
+		if(other.gameObject.tag == "Player"){
 
 			canDeposit = true;
 		}
 
-		else {canDeposit = false;}
+	}
+
+	void OnTriggerExit (Collider other){
+
+		if(other.gameObject.tag == "Player"){
+
+			canDeposit = false;
+
+		}
 	}
 
 }

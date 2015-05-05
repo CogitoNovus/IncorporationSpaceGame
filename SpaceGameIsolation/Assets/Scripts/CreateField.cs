@@ -49,12 +49,16 @@ public class CreateField : MonoBehaviour
 												}
 						asteroidSpawn[i].GetComponent<Rigidbody>().AddForce (new Vector3 (Random.Range (0, 360), Random.Range (0, 360), Random.Range (0, 360)) * Time.deltaTime);
 
-												int scale = Random.Range (1, 18);
+												int scale = Random.Range (1, 15);
 												asteroidSpawn[i].transform.localScale = new Vector3 (scale, scale, scale);
 
 						asteroidSpawn[i].GetComponent<Rigidbody>().AddTorque (new Vector3 (Random.Range (0, 10), Random.Range (0, 10), Random.Range (0, 10)) * Time.deltaTime);
 
-						if (scale > 20){asteroidSpawn[i].GetComponent<Rigidbody>().mass = 30;}
+						if (scale > 20){
+
+							asteroidSpawn[i].GetComponent<Rigidbody>().mass = 30;
+						
+						}
 					
 									}
 								}
