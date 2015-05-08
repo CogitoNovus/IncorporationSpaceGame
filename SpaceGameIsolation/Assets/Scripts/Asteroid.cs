@@ -34,6 +34,11 @@ public class Asteroid : MonoBehaviour {
 			}
 		}
 
+		if (mineralAmount <= 0){
+
+			gameObject.tag = "Asteroid";
+		}
+
 		if (Avatar.drill == true && canHarvest == true && PlayerResource.energyLvl != 1){
 
 			mineralAmount -= 1;

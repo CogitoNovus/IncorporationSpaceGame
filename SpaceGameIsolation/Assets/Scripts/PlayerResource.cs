@@ -27,6 +27,11 @@ public class PlayerResource : MonoBehaviour {
 
 			alarmTrigger.lowOxy = true;
 		}
+
+		if (oxyLvl > 5000){
+
+			alarmTrigger.lowOxy = false;
+		}
 	}
 
 }

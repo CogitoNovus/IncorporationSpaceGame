@@ -16,7 +16,7 @@ public class alarmTrigger : MonoBehaviour {
 		}
 
 		if (lowOxy == false){
-			
+
 			alarmSound.enabled = false;
 		}
 	}

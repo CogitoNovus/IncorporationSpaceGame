@@ -9,5 +9,9 @@ public class DepotText : MonoBehaviour {
 	
 		GetComponent<TextMesh>().text = deposit.depositedMineral.ToString();
 
+		if (deposit.depositedMineral == 10000){
+
+			GetComponent<TextMesh>().color = Color.green;
+		}
 	}
 }

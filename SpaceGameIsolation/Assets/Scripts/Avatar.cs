@@ -7,8 +7,6 @@ public class Avatar : MonoBehaviour {
 
 	public static bool scan = false;
 
-	public static bool lowOxy = false;
-
 	public static bool canMove = true;
 
 	public Rigidbody rb;
@@ -43,13 +41,6 @@ public class Avatar : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-
-		if (lowOxy == true){
-
-			g.GetComponent<SoundManager>().sources[0].loop = true;
-			g.GetComponent<SoundManager>().Player(0);
-
-		}
 
 		if (drill == true && PlayerResource.energyLvl > 1){
 
@@ -153,11 +144,15 @@ public class Avatar : MonoBehaviour {
 
 			flashLight.SetActive(true);
 
+			g.GetComponent<SoundManager>().Player(3);
+
 			}
 
 			else if (flashLight.activeInHierarchy == true){
 				
-				flashLight.SetActive(false);
+			flashLight.SetActive(false);
+
+			g.GetComponent<SoundManager>().Player(3);
 				
 			}
 		}
@@ -172,12 +167,15 @@ public class Avatar : MonoBehaviour {
 	
 	if (other.gameObject.tag == "Mineral"){
 	
-	if(Input.GetMouseButton(0) && PlayerResource.energyLvl != 0){
+	if(Input.GetMouseButton(0) && PlayerResource.energyLvl > 1){
 		
 		drill = true;
 	//Sound
 		GameObject g = GameObject.Find("Sound Manager");
-		g.GetComponent<SoundManager>().Player(2);	
+		
+		if (!g.GetComponent<SoundManager>().sources[2].isPlaying && PlayerResource.energyLvl > 2){
+		g.GetComponent<SoundManager>().Player(2);
+		}
 	}
 	else {
 		drill = false;

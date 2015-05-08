@@ -9,8 +9,6 @@ public class deposit : MonoBehaviour {
 
 	void Update(){
 
-		Debug.Log(canDeposit);
-
 		if (Avatar.personalMineral > 0){
 
 		if (canDeposit == true && Input.GetMouseButton(0) && Avatar.personalMineral != 0){
