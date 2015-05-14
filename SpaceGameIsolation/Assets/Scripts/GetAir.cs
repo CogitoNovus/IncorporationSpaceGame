@@ -9,6 +9,12 @@ public class GetAir : MonoBehaviour {
 
 			PlayerResource.oxyLvl += 20;
 		}
+
+
+		if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Return)){
+
+			timeSystem.awake = false;
+		}
 	}
 
 }

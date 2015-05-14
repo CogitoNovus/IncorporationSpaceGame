@@ -197,11 +197,21 @@ public class Avatar : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.gameObject.tag == "Oxy" && PlayerResource.oxyLvl < 100){
-			
-			PlayerResource.oxyLvl += 10;
-		}
 
+		int r = Random.Range(0,2);
+		Debug.Log(r);
+		
+		if (r == 0){
+			if (!g.GetComponent<SoundManager>().sources[4].isPlaying){
+				g.GetComponent<SoundManager>().Player(4);
+			}}
+		
+		else if (r == 1){
+			if (!g.GetComponent<SoundManager>().sources[5].isPlaying){
+				g.GetComponent<SoundManager>().Player(5);
+			}}	
+	
 	}
+	
 }
 
